@@ -1,0 +1,26 @@
+
+Winner: FeaturizeText=>Concatenate=>LightGbmBinary Accuracy: 0,8234095539959249
+
+FeaturizeText=>Concatenate=>FastTreeBinary Accuracy: 0,6477247000226398
+FeaturizeText=>Concatenate=>FastForestBinary Accuracy: 0,6393479737378311
+FeaturizeText=>Concatenate=>FastForestBinary Accuracy: 0,6393479737378311
+FeaturizeText=>Concatenate=>SdcaLogisticRegressionBinary Accuracy: 0,4360425628254471
+FeaturizeText=>Concatenate=>FastTreeBinary Accuracy: 0,6572334163459361
+FeaturizeText=>Concatenate=>LbfgsLogisticRegressionBinary Accuracy: 0,817523205795789
+FeaturizeText=>Concatenate=>LbfgsLogisticRegressionBinary Accuracy: 0,8150328277111162
+FeaturizeText=>Concatenate=>FastForestBinary Accuracy: 0,6628933665383745
+FeaturizeText=>Concatenate=>LbfgsLogisticRegressionBinary Accuracy: 0,8071088974417026
+FeaturizeText=>Concatenate=>FastForestBinary Accuracy: 0,6966266696853067
+Accuracy: 0,8269902555616842
+Log loss: 0,7493872099354225
+Log loss reduction: 0,2381037732916534
+TEST POSITIVE RATIO:	0,5753 (6258,0/(6258,0+4620,0))
+Confusion table
+          ||======================
+PREDICTED || positive | negative | Recall
+TRUTH     ||======================
+ positive ||    5 334 |      924 | 0,8523
+ negative ||      958 |    3 662 | 0,7926
+          ||======================
+Precision ||   0,8477 |   0,7985 |
+
