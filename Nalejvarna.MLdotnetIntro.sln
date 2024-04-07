@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.ModelBuilder.ImageClass", "Nalejvarna.MLdotnetIntro.ModelBuilder.ImageClass\Nalejvarna.MLdotnetIntro.ModelBuilder.ImageClass.csproj", "{AE8CA92C-E1F4-445D-95B8-3F90FF4AC9CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.TextClass.Binary", "Nalejvarna.MLdotnetIntro.TextClass.Binary\Nalejvarna.MLdotnetIntro.TextClass.Binary.csproj", "{A1627FE6-3309-4DB1-BC36-CDAD10C84659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.Shared", "Nalejvarna.MLdotnetIntro.Shared\Nalejvarna.MLdotnetIntro.Shared.csproj", "{74FC085B-8345-4D2F-A83A-0E6CAAB74E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.TextClass.Multi", "Nalejvarna.MLdotnetIntro.TextClass.Multi\Nalejvarna.MLdotnetIntro.TextClass.Multi.csproj", "{330AD4EF-98FC-4D5A-8ECD-293E39C1B606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.AutoML.TextClass.Binary", "Nalejvarna.MLdotnetIntro.AutoML.TextClass.Binary\Nalejvarna.MLdotnetIntro.AutoML.TextClass.Binary.csproj", "{4FE9536C-D4A8-4E47-B715-8630374FD746}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.AutoML.TextClass.Multi", "Nalejvarna.MLdotnetIntro.AutoML.TextClass.Multi\Nalejvarna.MLdotnetIntro.AutoML.TextClass.Multi.csproj", "{E5C004F5-75E7-492A-825B-DF8B7D5EF3D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Binary", "Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Binary\Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Binary.csproj", "{7C38ABA8-E323-40EF-9A66-04390A06056A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Multi", "Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Multi\Nalejvarna.MLdotnetIntro.ModelBuilder.TextClass.Multi.csproj", "{9BAD7770-FFFF-4C42-8FF8-7C0D22468FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE8CA92C-E1F4-445D-95B8-3F90FF4AC9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8CA92C-E1F4-445D-95B8-3F90FF4AC9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8CA92C-E1F4-445D-95B8-3F90FF4AC9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8CA92C-E1F4-445D-95B8-3F90FF4AC9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1627FE6-3309-4DB1-BC36-CDAD10C84659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1627FE6-3309-4DB1-BC36-CDAD10C84659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1627FE6-3309-4DB1-BC36-CDAD10C84659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1627FE6-3309-4DB1-BC36-CDAD10C84659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FC085B-8345-4D2F-A83A-0E6CAAB74E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FC085B-8345-4D2F-A83A-0E6CAAB74E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FC085B-8345-4D2F-A83A-0E6CAAB74E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FC085B-8345-4D2F-A83A-0E6CAAB74E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{330AD4EF-98FC-4D5A-8ECD-293E39C1B606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330AD4EF-98FC-4D5A-8ECD-293E39C1B606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330AD4EF-98FC-4D5A-8ECD-293E39C1B606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330AD4EF-98FC-4D5A-8ECD-293E39C1B606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE9536C-D4A8-4E47-B715-8630374FD746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE9536C-D4A8-4E47-B715-8630374FD746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE9536C-D4A8-4E47-B715-8630374FD746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE9536C-D4A8-4E47-B715-8630374FD746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C004F5-75E7-492A-825B-DF8B7D5EF3D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C004F5-75E7-492A-825B-DF8B7D5EF3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C004F5-75E7-492A-825B-DF8B7D5EF3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C004F5-75E7-492A-825B-DF8B7D5EF3D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C38ABA8-E323-40EF-9A66-04390A06056A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C38ABA8-E323-40EF-9A66-04390A06056A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C38ABA8-E323-40EF-9A66-04390A06056A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C38ABA8-E323-40EF-9A66-04390A06056A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BAD7770-FFFF-4C42-8FF8-7C0D22468FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAD7770-FFFF-4C42-8FF8-7C0D22468FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAD7770-FFFF-4C42-8FF8-7C0D22468FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAD7770-FFFF-4C42-8FF8-7C0D22468FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C9CE14F-F3F1-47C6-BA5A-66CA6116207F}
+	EndGlobalSection
+EndGlobal
