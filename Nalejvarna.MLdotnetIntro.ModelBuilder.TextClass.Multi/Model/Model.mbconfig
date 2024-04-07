@@ -3,7 +3,7 @@
   "DataSource": {
     "Type": "TabularFile",
     "Version": 1,
-    "FilePath": "C:\\Users\\david\\source\\repos\\Nalejvarna.MLdotnetIntro\\Nalejvarna.MLdotnetIntro.Shared\\Data\\csfd.tsv",
+    "FilePath": "..\\..\\Data\\csfd.tsv",
     "Delimiter": "\t",
     "DecimalMarker": ".",
     "HasHeader": false,
