@@ -3,7 +3,7 @@
   "DataSource": {
     "Type": "Folder",
     "Version": 1,
-    "FolderPath": "..\\..\\Data\\CompCars"
+    "FolderPath": "***set manually***"
   },
   "Environment": {
     "Type": "LocalCPU",
@@ -48,7 +48,7 @@
     },
     "Schema": "e0 * e1 * e2",
     "MetricName": "MacroAccuracy",
-    "ModelFilePath": "C:\\Users\\david\\source\\repos\\Nalejvarna.MLdotnetIntro\\Nalejvarna.MLdotnetIntro.ModelBuilder.ImageClass\\Model\\Model.mlnet"
+    "ModelFilePath": "***set manually***"
   },
   "Type": "TrainingConfig",
   "Version": 4,
