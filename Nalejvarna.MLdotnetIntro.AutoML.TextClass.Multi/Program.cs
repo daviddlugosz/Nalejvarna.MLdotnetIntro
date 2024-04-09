@@ -10,7 +10,7 @@ var (fileExists, dataFilePath, modelMetricsFilePath, modelFilePath) = FileHelper
 
 if (!fileExists)
 {
-    Console.WriteLine($"Model file could not be found at {dataFilePath}");
+    Console.WriteLine($"Soubor se vstupními daty {dataFilePath} nenalezen");
     return;
 }
 
@@ -30,7 +30,7 @@ ConsoleHelper.Consume(predictionEngine);
 (ITransformer, IDataView) BuildAndTrainModel(
     MLContext mlContext, string dataFilePath, string modelMetricsFilePath)
 {
-    Console.WriteLine($"{DateTime.Now:T}\tLoading data...");
+    Console.WriteLine($"{DateTime.Now:T}\tNačítání dat...");
     Console.WriteLine();
 
     var dataView = mlContext.Data.LoadFromTextFile<ModelInput>(
@@ -45,11 +45,11 @@ ConsoleHelper.Consume(predictionEngine);
 
     var experimentSettings = new MulticlassExperimentSettings
     {
-        MaxExperimentTimeInSeconds = 600,
+        MaxExperimentTimeInSeconds = 1800,
         OptimizingMetric = MulticlassClassificationMetric.MacroAccuracy,
     };
 
-    Console.WriteLine($"{DateTime.Now:T}\tStarting experiment for finding the best algorithm to use to create our model...");
+    Console.WriteLine($"{DateTime.Now:T}\tSpouštění experimentu pro nalezení nejvhodnějíšho algoritmu pro vytvoření modelu...");
 
     var experiment = mlContext
         .Auto()
@@ -58,12 +58,12 @@ ConsoleHelper.Consume(predictionEngine);
 
     var sb = new StringBuilder();
     sb.AppendLine();
-    sb.AppendLine($"Winner: {experiment.BestRun.TrainerName} Accuracy: {experiment.BestRun.ValidationMetrics.MacroAccuracy}");
+    sb.AppendLine($"Nejlepší nalezení algoritmus: {experiment.BestRun.TrainerName}, MacroAccuracy: {experiment.BestRun.ValidationMetrics.MacroAccuracy}");
     sb.AppendLine();
     foreach (var trainer in experiment.RunDetails
         .Where(rd => rd.TrainerName != experiment.BestRun.TrainerName))
     {
-        sb.AppendLine($"{trainer.TrainerName} Accuracy: {trainer.ValidationMetrics.MacroAccuracy}");
+        sb.AppendLine($"{trainer.TrainerName} MacroAccuracy: {trainer.ValidationMetrics.MacroAccuracy}");
     };
     var experimentString = sb.ToString();
     Console.WriteLine(experimentString);
@@ -81,37 +81,37 @@ void EvaluateAndSaveModel(MLContext mlContext,
 {
     var transformedTest = model.Transform(testData);
 
-    Console.WriteLine($"{DateTime.Now:T}\tStarting evaluation of the model...");
+    Console.WriteLine($"{DateTime.Now:T}\tSpouštění měření modelu...");
     Console.WriteLine();
 
     var metrics = mlContext.MulticlassClassification.Evaluate(transformedTest);
 
-    Console.WriteLine($"{DateTime.Now:T}\tEvaluated metrics:");
+    Console.WriteLine($"{DateTime.Now:T}\tVýsledek měření:");
 
     var sb = new StringBuilder();
     sb.AppendLine($"Macro accuracy: {metrics.MacroAccuracy}");
     sb.AppendLine($"Micro accuracy: {metrics.MicroAccuracy}");
-    sb.AppendLine($"Log loss: {metrics.LogLoss}");
-    sb.AppendLine($"Log loss reduction: {metrics.LogLossReduction}");
+    // další metriky... 
+
     sb.AppendLine(metrics.ConfusionMatrix.GetFormattedConfusionTable());
     var metricsString = sb.ToString();
     Console.WriteLine(metricsString); ;
     File.AppendAllText(modelMetricsFilePath, metricsString);
     Console.WriteLine();
 
-    Console.WriteLine($"{DateTime.Now:T}\tSaving model...");
+    Console.WriteLine($"{DateTime.Now:T}\tUkládání modelu...");
     Console.WriteLine();
     mlContext.Model.Save(model, testData.Schema, modelFilePath);
 }
 
 PredictionEngine<ModelInput, ModelOutput> LoadModelAndCreatePredictionEngine(MLContext mlContext, string modelFilePath)
 {
-    Console.WriteLine($"{DateTime.Now:T}\tLoading model and creating prediction engine...");
+    Console.WriteLine($"{DateTime.Now:T}\tNačítání modelu a vytváření predikčního engine...");
     Console.WriteLine();
 
     var model = mlContext.Model.Load(modelFilePath, out _);
 
-    Console.WriteLine($"{DateTime.Now:T}\tModel loaded and preduction engine created...");
+    Console.WriteLine($"{DateTime.Now:T}\tModel načten a predikční engine vytvořen...");
     Console.WriteLine();
 
     return mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(model);
