@@ -76,7 +76,7 @@ void EvaluateAndSaveModel(MLContext mlContext,
     var sb = new StringBuilder();
     sb.AppendLine($"Macro accuracy: {metrics.MacroAccuracy}");
     sb.AppendLine($"Micro accuracy: {metrics.MicroAccuracy}");
-    // další metriky...
+    // more metrics if needed...
 
     sb.AppendLine(metrics.ConfusionMatrix.GetFormattedConfusionTable());
     var metricsString = sb.ToString();

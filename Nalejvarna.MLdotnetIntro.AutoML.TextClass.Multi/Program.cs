@@ -45,7 +45,7 @@ ConsoleHelper.Consume(predictionEngine);
 
     var experimentSettings = new MulticlassExperimentSettings
     {
-        MaxExperimentTimeInSeconds = 1800,
+        MaxExperimentTimeInSeconds = 1200,
         OptimizingMetric = MulticlassClassificationMetric.MacroAccuracy,
     };
 
@@ -91,7 +91,7 @@ void EvaluateAndSaveModel(MLContext mlContext,
     var sb = new StringBuilder();
     sb.AppendLine($"Macro accuracy: {metrics.MacroAccuracy}");
     sb.AppendLine($"Micro accuracy: {metrics.MicroAccuracy}");
-    // další metriky... 
+    // more metrics if needed... 
 
     sb.AppendLine(metrics.ConfusionMatrix.GetFormattedConfusionTable());
     var metricsString = sb.ToString();

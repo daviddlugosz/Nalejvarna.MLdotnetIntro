@@ -72,7 +72,7 @@ void EvaluateAndSaveModel(MLContext mlContext,
     var sb = new StringBuilder();
     var accuracy = $"Accuracy: {metrics.Accuracy}";
     sb.AppendLine(accuracy);
-    // další metriky
+    // more metrics if needed
 
     var matrix = metrics.ConfusionMatrix.GetFormattedConfusionTable();
     sb.AppendLine(matrix);
