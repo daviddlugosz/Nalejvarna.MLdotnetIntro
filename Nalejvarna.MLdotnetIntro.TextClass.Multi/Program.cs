@@ -8,7 +8,7 @@ var (fileExists, dataFilePath, modelMetricsFilePath, modelFilePath) = FileHelper
 
 if (!fileExists)
 {
-    Console.WriteLine($"Soubor se vstupními daty {dataFilePath} nenalezen");
+    Console.WriteLine($"File with input data {dataFilePath} not found!");
     return;
 }
 
@@ -28,7 +28,7 @@ ConsoleHelper.Consume(predictionEngine);
 (ITransformer, IDataView) BuildAndTrainModel(
     MLContext mlContext, string dataFilePath)
 {
-    Console.WriteLine($"{DateTime.Now:T}\tNačítání dat...");
+    Console.WriteLine($"{DateTime.Now:T}\tLoading data...");
     Console.WriteLine();
 
     var dataView = mlContext.Data.LoadFromTextFile<ModelInput>(
@@ -52,7 +52,7 @@ ConsoleHelper.Consume(predictionEngine);
 
     var trainingPipeline = pipeline.Append(trainer);
 
-    Console.WriteLine($"{DateTime.Now:T}\tStart učení modelu...");
+    Console.WriteLine($"{DateTime.Now:T}\tStart of model learning...");
     Console.WriteLine();
 
     return (trainingPipeline.Fit(trainData), testData);
@@ -71,7 +71,7 @@ void EvaluateAndSaveModel(MLContext mlContext,
 
     var metrics = mlContext.MulticlassClassification.Evaluate(transformedTest);
 
-    Console.WriteLine($"{DateTime.Now:T}\tVýsledek měření:");
+    Console.WriteLine($"{DateTime.Now:T}\tEvaluation results:");
 
     var sb = new StringBuilder();
     sb.AppendLine($"Macro accuracy: {metrics.MacroAccuracy}");
@@ -84,19 +84,19 @@ void EvaluateAndSaveModel(MLContext mlContext,
     File.WriteAllText(modelMetricsFilePath, metricsString);
     Console.WriteLine();
 
-    Console.WriteLine($"{DateTime.Now:T}\tUkládání modelu...");
+    Console.WriteLine($"{DateTime.Now:T}\tSaving of model...");
     Console.WriteLine();
     mlContext.Model.Save(model, testData.Schema, modelFilePath);
 }
 
 PredictionEngine<ModelInput, ModelOutput> LoadModelAndCreatePredictionEngine(MLContext mlContext, string modelFilePath)
 {
-    Console.WriteLine($"{DateTime.Now:T}\tNačítání modelu a vytváření predikčního engine...");
+    Console.WriteLine($"{DateTime.Now:T}\tLoading of model and creation of prediction engine...");
     Console.WriteLine();
 
     var model = mlContext.Model.Load(modelFilePath, out _);
 
-    Console.WriteLine($"{DateTime.Now:T}\tModel načten a predikční engine vytvořen...");
+    Console.WriteLine($"{DateTime.Now:T}\tModel loaded and prediction engine created...");
     Console.WriteLine();
 
     return mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(model);

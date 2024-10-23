@@ -15,7 +15,7 @@ public static class ConsoleHelper
             var input = Console.ReadLine();
             input = input!.RemoveDiacritics();
 
-            if (input?.ToLowerInvariant() == "konec")
+            if (input?.ToLowerInvariant() == "quit")
             {
                 break;
             }
@@ -24,12 +24,12 @@ public static class ConsoleHelper
             var result = predictionEngine.Predict(sampleData);
 
             Console.WriteLine();
-            Console.Write($"Podle modelu Vámi zadaná recenze odpovídá hodnocení: ");
+            Console.Write($"According to model your review should have rating: ");
 
             Console.ForegroundColor = ConsoleColor.Red;
             if (result.PredictedLabel == 0)
             {
-                Console.WriteLine("odpad!");
+                Console.WriteLine("odpad! (trash!)");
             }
             else
             {
@@ -56,7 +56,7 @@ public static class ConsoleHelper
             var input = Console.ReadLine();
             input = input!.RemoveDiacritics();
 
-            if (input?.ToLowerInvariant() == "konec")
+            if (input?.ToLowerInvariant() == "quit")
             {
                 break;
             }
@@ -65,17 +65,17 @@ public static class ConsoleHelper
             var result = predictionEngine.Predict(sampleData);
 
             Console.WriteLine();
-            Console.Write($"Podle modelu je Vámi zadaná recenze: ");
+            Console.Write($"According to model your review is: ");
 
             if (result.PredictedLabel)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("pozitivní");
+                Console.WriteLine("positive");
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("negativní");
+                Console.WriteLine("negative");
 
             }
             Console.ForegroundColor = ConsoleColor.White;
@@ -87,8 +87,8 @@ public static class ConsoleHelper
 
     private static void PrintInputPrompt()
     {
-        Console.WriteLine("Napiště recenzi na film:");
-        Console.WriteLine("(Pro ukončení programu zadejte 'konec')");
+        Console.WriteLine("Write movie review:");
+        Console.WriteLine("(To quit program input 'quit')");
         Console.WriteLine();
     }
 }
